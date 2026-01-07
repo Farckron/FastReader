@@ -1,23 +1,21 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Hello, World!");
+        System.out.println("Main is running.");
         File file = new File("input.txt");
-        try {
-            Scanner fileScanner = new Scanner(file);
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
-                System.out.println(line);
-            }
-            fileScanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
-        }
 
+        MyRunnable runnable1 = new MyRunnable();
+        Thread thread2 = new Thread(runnable1);
+        thread2.start();
+
+        System.out.println("Please enter reading speed (wpm): ");
+        int wpm = scanner.nextInt();
+        System.out.println("You entered: " + wpm + " wpm");
+
+        DataReading.FileOutput(file, thread2, wpm);
         
     }
 }
