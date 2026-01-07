@@ -1,1 +1,1 @@
-**Read text from input.txt with any speed in wpm (words per minute)**
+## Read text from input.txt with any speed in wpm (words per minute)
