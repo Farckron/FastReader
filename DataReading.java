@@ -23,6 +23,7 @@ public class DataReading {
                 WordList.add(word);
                 textObject.incrementWordCount();
             }
+            System.out.println("Total word count: " + textObject.getTotalWordCount());
             ArrayListOutput(WordList, wpm);
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
