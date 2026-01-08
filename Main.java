@@ -15,6 +15,6 @@ public class Main {
         DataReading dataReading = new DataReading(); // ??
         dataReading.fileOutput(file, thread2, wpm);
 
-        
+        System.out.println("Total word count: " + dataReading.textObject.getTotalWordCount());
     }
 }
