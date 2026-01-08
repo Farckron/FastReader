@@ -11,10 +11,7 @@ public class Main {
         Thread thread2 = new Thread(runnable1);
         thread2.start();
 
-        System.out.println("Please enter reading speed (wpm): ");
-        int wpm = scanner.nextInt();
-        System.out.println("You entered: " + wpm + " wpm");
-
+        int wpm = HandlingInput.UserInputWpm(scanner);
         DataReading.FileOutput(file, thread2, wpm);
         
     }
