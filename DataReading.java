@@ -10,12 +10,18 @@ public class DataReading {
     }
     */
 
-    public static void FileOutput(File file, Thread thread, int wpm) {
+
+   TextObject textObject = new TextObject();
+   //int totalWordCount = textObject.getTotalWordCount();
+
+
+    public void fileOutput(File file, Thread thread, int wpm) {
         ArrayList<String> WordList = new ArrayList<>();
         try(Scanner fileScanner = new Scanner(file);) {
             while (fileScanner.hasNext()) {
                 String word = fileScanner.next();
                 WordList.add(word);
+                textObject.incrementWordCount();
             }
             ArrayListOutput(WordList, wpm);
         } catch (FileNotFoundException e) {
@@ -29,11 +35,14 @@ public class DataReading {
           }
     }
 
-    public static void ArrayListOutput(ArrayList<String> WordList, int wpm) {
+    public void ArrayListOutput(ArrayList<String> WordList, int wpm) {
+        int wordCounter = 0;
         for (String word : WordList) {
-            System.out.println(word);
+            double pct = ((double) wordCounter / (double) textObject.getTotalWordCount()) * 100.0;
+            System.out.printf("  [%4.2f%%]    %s%n", pct, word);
             try {
                 Thread.sleep(60000 / wpm); // Sleep based on words per minute
+                wordCounter++;
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted: " + e.getMessage());
             }

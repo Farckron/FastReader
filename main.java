@@ -11,8 +11,11 @@ public class Main {
         Thread thread2 = new Thread(runnable1);
         thread2.start();
 
-        int wpm = HandlingInput.UserInputWpm(scanner);
-        DataReading.FileOutput(file, thread2, wpm);
+        int wpm = HandlingInputOutput.userInputWpm(scanner);
+        DataReading dataReading = new DataReading(); // ??
+        dataReading.fileOutput(file, thread2, wpm);
+
+        System.out.println("Total word count: " + dataReading.textObject.getTotalWordCount());
         
     }
 }

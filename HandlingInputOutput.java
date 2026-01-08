@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
-public class HandlingInput {
+public class HandlingInputOutput {
 
-    private int wpm;
-    public static int UserInputWpm(Scanner scanner) {
+
+    public static int userInputWpm(Scanner scanner) {
         System.out.println("Please enter reading speed (wpm): ");
         int wpm = scanner.nextInt();
         if (wpm <= 0) {
             System.out.println("Invalid input. Please enter a positive integer for wpm.");
-            return UserInputWpm(scanner);
+            return userInputWpm(scanner);
         }
         System.out.println("You entered: " + wpm + " wpm"); 
         return wpm;
     }
 
-    public int getWpm() {
-        return wpm;
+    public static void wordsOutput() {
+        
     }
+
 }
