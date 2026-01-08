@@ -1,15 +1,13 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-
-        {
-            "type": "jdk",
-            "request": "launch",
-            "name": "Launch Java App",
-            "vmArgs": "-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "jdk",
+      "request": "launch",
+      "name": "Launch Java App",
+      "cwd": "${workspaceFolder}",
+      "args": "${workspaceFolder}/input.txt",
+      "vmArgs": "-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8"
+    }
+  ]
 }
